@@ -4,19 +4,19 @@
   become: yes
 
   tasks:
-  - name: Install HTTPD
-    yum:
-      name: httpd
+  - name: Install Apache2
+    apt:
+      name: apache2
       state: present
 
 
-  - name: start Httpd
+  - name: start Apache2
     service:
-      name: httpd
+      name: apache2
       state: started
 
-  - name: Enable Httpd
+  - name: Enable Apache2
     service:
-      name: httpd
+      name: apache2
       enabled: yes
 ...

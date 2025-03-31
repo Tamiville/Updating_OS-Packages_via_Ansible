@@ -14,5 +14,4 @@
         dest: /home/ec2-user/opt/devops/info.txt
         content: "Hello from Ansible!"
         mode: '0644'
-
 ...
