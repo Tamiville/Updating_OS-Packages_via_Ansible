@@ -1,0 +1,18 @@
+---
+- name: Deploy Web App
+  hosts: slave-vm1
+  become: yes
+
+  tasks:
+  - name: Install Git
+    yum:
+      name: git
+      state: present
+
+
+  - name: Host code
+    git:
+      repo: https://github.com/Tamiville/Updating_OS-Packages_via_Ansible.git
+      dest: var/www/html
+
+...

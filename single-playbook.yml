@@ -1,0 +1,21 @@
+---
+- name: Creating /opt/devops directory on Slave VMs
+  hosts: all
+
+
+  tasks:
+  - name: Create Directory
+    file:
+      path: /home/ec2-user/opt/devops
+      state: directory
+
+
+  - name: Adding info.txt with content
+    copy:
+        dest: /home/ec2-user/opt/devops/info.txt
+        content: "Hello from Ansible!"
+
+
+
+...
+

@@ -1,0 +1,18 @@
+---
+- name: Create /opt/devops directory on VMs
+  hosts: all
+  become: yes
+  tasks:
+    - name: Ensure /opt/devops directory exists
+      file:
+        path: /home/ec2-user/opt/devops
+        state: directory
+        mode: '0755'
+
+    - name: Adding info.txt with content
+      copy:
+        dest: /home/ec2-user/opt/devops/info.txt
+        content: "Hello from Ansible!"
+        mode: '0644'
+
+...
