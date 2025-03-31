@@ -1,0 +1,11 @@
+---
+- name: under maintenance
+  hosts: slave-vm2
+  become: yes
+
+  tasks:
+  - name: Update maintenace
+    copy:
+      src: maintenance.html
+      dest: /var/www/html/index.html
+...
